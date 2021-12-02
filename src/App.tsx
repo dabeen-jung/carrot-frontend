@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import AppBar from "@mui/material/AppBar";
+import BottomAppBar from "./components/BottomAppBar";
 import Toolbar from "@mui/material/Toolbar";
-import { Box, Container, Grid } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
 
 const App = (): JSX.Element => {
   return (
@@ -13,38 +10,7 @@ const App = (): JSX.Element => {
       </AppBar>
       <Toolbar />
       내용
-      <AppBar position="fixed" sx={{ top: "auto", bottom: 0 }}>
-        <Toolbar>
-          <Grid container>
-            <Grid item xs>
-              <Box display="flex" justifyContent="center">
-                홈
-              </Box>
-            </Grid>
-
-            <Grid item xs>
-              <Box display="flex" justifyContent="center">
-                동네생활
-              </Box>
-            </Grid>
-            <Grid item xs>
-              <Box display="flex" justifyContent="center">
-                내 근처
-              </Box>
-            </Grid>
-            <Grid item xs>
-              <Box display="flex" justifyContent="center">
-                채팅
-              </Box>
-            </Grid>
-            <Grid item xs>
-              <Box display="flex" justifyContent="center">
-                나의 당근
-              </Box>
-            </Grid>
-          </Grid>
-        </Toolbar>
-      </AppBar>
+      <BottomAppBar />
     </main>
   );
 };
