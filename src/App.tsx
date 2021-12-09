@@ -1,6 +1,7 @@
 import BottomAppBar from "./components/BottomAppBar";
 import Toolbar from "@mui/material/Toolbar";
 import AppBar from "@mui/material/AppBar";
+import Home from "./pages/Home/index";
 
 const App = (): JSX.Element => {
   return (
@@ -9,7 +10,8 @@ const App = (): JSX.Element => {
         <Toolbar>{"YEah"}</Toolbar>
       </AppBar>
       <Toolbar />
-      내용
+      <Home />
+      <Toolbar />
       <BottomAppBar />
     </main>
   );
