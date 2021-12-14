@@ -6,7 +6,13 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import ListItemText from "@mui/material/ListItemText";
 import { tradeItems } from "./data";
+import TradeInformation from "./components/TradeInformation";
+import TradeEvent from "./components/TradeEvent";
 
+/* 컴포넌트 실행에 필요한 값  : props
+props는 함수에  매개변수처럼 전달 받음 -> (props: 어쩌구 타입)
+
+*/
 const ImageTheme = {
   width: "120px",
   height: "120px",
@@ -29,7 +35,17 @@ const Home = (): JSX.Element => {
                     sx={ImageTheme}
                   />
                 </ListItemAvatar>
-                <ListItemText primary={item.title} secondary={item.location} />
+                <ListItemText
+                  primary={
+                    <TradeInformation
+                      title={item.title}
+                      location={item.location}
+                      price={item.price}
+                      createdAt={item.createdAt}
+                    />
+                  }
+                  //secondary={<TradeEvent chat={chat} />}
+                />
               </ListItemButton>
             </ListItem>
           );
