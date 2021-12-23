@@ -9,6 +9,8 @@ type TradeItem = {
   createdAt: Date;
   updatedAt?: Date;
   price: number;
+  chat?: number;
+  interest?: number;
 };
 
 export const tradeItems: TradeItem[] = [
@@ -21,6 +23,8 @@ export const tradeItems: TradeItem[] = [
     createdAt: new Date(),
     updatedAt: new Date(),
     price: 15000,
+    chat: 1,
+    interest: 3,
   },
   {
     id: "2",
@@ -41,6 +45,8 @@ export const tradeItems: TradeItem[] = [
     createdAt: new Date(),
     updatedAt: new Date(),
     price: 6000,
+    chat: 3,
+    interest: 12,
   },
   {
     id: "4",

@@ -1,18 +1,22 @@
 import BottomAppBar from "./components/BottomAppBar";
 import Toolbar from "@mui/material/Toolbar";
+import Chat from "./pages/Chat";
 import AppBar from "@mui/material/AppBar";
 import Home from "./pages/Home/index";
+import TradeDetail from "./pages/TradeDetail";
 
 const App = (): JSX.Element => {
   return (
     <main>
-      <AppBar position="fixed">
+      {/* <AppBar position="fixed">
         <Toolbar>{"YEah"}</Toolbar>
-      </AppBar>
+      </AppBar> */}
       <Toolbar />
-      <Home />
+      {/* <Home /> */}
+      {/* <TradeDetail /> */}
+      <Chat />
       <Toolbar />
-      <BottomAppBar />
+      {/* <BottomAppBar /> */}
     </main>
   );
 };

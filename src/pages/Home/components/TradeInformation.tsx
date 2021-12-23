@@ -25,7 +25,6 @@ const TradeInformation = (information: TradeInformationType) => {
       <Typography variant="subtitle1">
         <strong>{price}원</strong>
       </Typography>
-      ;
     </Box>
   );
 };
