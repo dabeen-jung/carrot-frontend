@@ -35,11 +35,13 @@ export const tradeItems: TradeItem[] = [
     createdAt: new Date(),
     updatedAt: new Date(),
     price: 12000,
+    chat: 6,
+    interest: 3,
   },
   {
     id: "3",
     imageUrl:
-      "https://www.costco.co.kr/medias/sys_master/images/hdc/h4a/9951617646622.jpg",
+      "https://www.google.com/url?sa=i&url=http%3A%2F%2Fm.11st.co.kr%2Fproducts%2Fm%2F893148907&psig=AOvVaw3L4wBqNkB2TArjuoWUXvsh&ust=1641991765239000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLiaoJHeqfUCFQAAAAAdAAAAABAD",
     title: "귀여운 곰인형",
     location: "인천 남동구 만수동",
     createdAt: new Date(),
@@ -56,6 +58,8 @@ export const tradeItems: TradeItem[] = [
     createdAt: new Date(),
     updatedAt: new Date(),
     price: 18000,
+    chat: 16,
+    interest: 0,
   },
   {
     id: "5",
@@ -66,6 +70,8 @@ export const tradeItems: TradeItem[] = [
     createdAt: new Date(),
     updatedAt: new Date(),
     price: 18000,
+    chat: 0,
+    interest: 3,
   },
   {
     id: "6",
@@ -76,5 +82,7 @@ export const tradeItems: TradeItem[] = [
     createdAt: new Date(),
     updatedAt: new Date(),
     price: 18000,
+    chat: 1,
+    interest: 3,
   },
 ];

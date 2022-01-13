@@ -13,14 +13,41 @@ import AppBar from "@mui/material/AppBar";
 import ToolBar from "@mui/material/Toolbar";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import TradeAppBar from "./components/TradeAppBar";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+type TradeItem = {
+  id: string;
+  image: string;
+  title: string;
+  description: string;
+  location: string;
+  price: number;
+  chat?: number;
+  isAdjustable: boolean;
+  createdAt: Date;
+  updatedAt?: Date;
+};
 
 const TradeDetail = (): JSX.Element => {
+  //[값 ,값 정의해주는 함수]
+  const [article, setArticle] = useState<TradeItem>();
+  const getArticles = async () => {
+    const { data } = await axios.get("http://localhost:5000/trade/articles/1");
+    setArticle(data);
+  };
+  useEffect(() => {
+    getArticles();
+  }, []);
   return (
     <>
       <Box paddingTop="20px">
         <Grid container>
           <Grid item xs={1}>
-            <Avatar src="프로필 이미지 주소" sx={{ width: 80, height: 80 }} />
+            <Avatar
+              src={article && article.image}
+              sx={{ width: 80, height: 80 }}
+            />
           </Grid>
 
           <Grid item xs={9}>
@@ -29,7 +56,9 @@ const TradeDetail = (): JSX.Element => {
                 <Typography variant="h6">아이디</Typography>
               </Grid>
               <Grid item xs={12}>
-                <Typography variant="subtitle1">지역</Typography>
+                <Typography variant="subtitle1">
+                  {article && article.title}
+                </Typography>
               </Grid>
             </Grid>
           </Grid>
@@ -47,22 +76,24 @@ const TradeDetail = (): JSX.Element => {
                 />
               </Grid>
               <Grid item xs={4}>
-                <SentimentSatisfiedIcon fontSize="large" />
+                <Box display="flex" justifyContent="center" alignItems="center">
+                  <SentimentSatisfiedIcon fontSize="large" />
+                </Box>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
       </Box>
       <hr />
-      <Typography variant="h4">물건 제목</Typography>
-      <Box>
-        어쩌고 저쩌고 내용내용~ 그리하여 얼마 어쩌고
-        <br />
-        저꺼 강남역에서 팔겠수 그리고 얼마나 싸고 비싸고 한지 알아서
-        <br />
-        네고해드림다 택배는 2500원 직거래는 배송비 없슴다~~
-      </Box>
-      <TradeAppBar isInterest={true} isAdjustable={false} price={5000} />
+      <Typography variant="h4">{article && article.title}</Typography>
+      <Box>{article && article.description}</Box>
+      {article && (
+        <TradeAppBar
+          isInterest={true}
+          isAdjustable={article.isAdjustable}
+          price={article.price}
+        />
+      )}
     </>
   );
 };

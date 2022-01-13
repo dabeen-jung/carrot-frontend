@@ -8,15 +8,16 @@ import TradeDetail from "./pages/TradeDetail";
 const App = (): JSX.Element => {
   return (
     <main>
+      <TradeDetail />
       {/* <AppBar position="fixed">
         <Toolbar>{"YEah"}</Toolbar>
       </AppBar> */}
-      <Toolbar />
+      {/* <Toolbar /> */}
       {/* <Home /> */}
-      {/* <TradeDetail /> */}
+      {/* <TradeDetail /> 
       <Chat />
       <Toolbar />
-      {/* <BottomAppBar /> */}
+      { <BottomAppBar /> */}
     </main>
   );
 };
